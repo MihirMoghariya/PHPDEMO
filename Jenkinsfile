@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/yourusername/your-repo-name.git'
+                git url: 'https://github.com/MihirMoghariya/PHPDEMO.git'
             }
         }
         stage('Build') {
