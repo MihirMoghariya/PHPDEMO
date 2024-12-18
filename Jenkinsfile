@@ -1,24 +1,22 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/MihirMoghariya/PHPDEMO.git'
-            }
-        }
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
+                echo 'Building the application...'
+                sh 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "Running Tests..."'
+                echo 'Running tests...'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo "Deploying..."'
+                echo 'Deploying application...'
+                // Add deployment commands here
             }
         }
     }
